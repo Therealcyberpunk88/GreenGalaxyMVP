@@ -1,4 +1,4 @@
-/**
+﻿/**
  * IMPORTANT:
  * ---------
  * Do not manually edit this file if you'd like to host your server on Colyseus Cloud
@@ -14,4 +14,6 @@ import { listen } from "@colyseus/tools";
 import app from "./app.config";
 
 // Create and listen on 2567 (or PORT environment variable.)
-listen(app);
+const port = Number(process.env.PORT) || 2567;
+gameServer.listen(port);
+console.log("✅ Colyseus listening on", port);
