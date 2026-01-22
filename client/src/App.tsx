@@ -73,7 +73,11 @@ export default function App() {
     const [chatInput, setChatInput] = useState("");
     const [myId, setMyId] = useState("");
 
-    const client = useMemo(() => new Client("ws://localhost:2567"), []);
+    const WS_URL = import.meta.env.DEV
+        ? "ws://localhost:2567"
+        : "wss://greengalaxymvp-1.onrender.com/";
+
+    const client = useMemo(() => new Client(WS_URL), []);
     const roomRef = useRef<Room | null>(null);
     const myIdRef = useRef<string>("");
 
