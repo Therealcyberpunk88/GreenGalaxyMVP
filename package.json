@@ -1,0 +1,14 @@
+{
+    "name": "greengalaxy-MVP",
+    "private": true,
+    "scripts": {
+        "dev": "concurrently -n SERVER,CLIENT -c yellow,cyan \"npm --prefix server run dev\" \"npm --prefix client run dev\""
+    },
+    "devDependencies": {
+        "concurrently": "^9.0.0"
+    },
+    "dependencies": {
+        "colyseus.js": "^0.16.22",
+        "three": "^0.182.0"
+    }
+}
